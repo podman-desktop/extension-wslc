@@ -45,7 +45,7 @@ export default defineConfig({
         entryFileNames: '[name].cjs',
       },
     },
-    emptyOutDir: true,
+    emptyOutDir: false,
     reportCompressedSize: false,
   },
 });
