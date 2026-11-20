@@ -16,6 +16,7 @@
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch --mode development",
+    "download-dependencies": "tsx ./scripts/download.ts",
     "test": "vitest run --coverage --passWithNoTests",
     "test:watch": "vitest watch --coverage",
     "typecheck": "tsc --noEmit --project tsconfig.json",
