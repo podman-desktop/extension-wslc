@@ -18,5 +18,5 @@
       "/@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "vite.config.ts", "vitest.config.ts"]
+  "include": ["src/**/*.ts", "__mocks__/**/*.ts", "vite.config.ts", "vitest.config.ts"]
 }
