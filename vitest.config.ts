@@ -23,6 +23,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '/@/': `${resolve(import.meta.dirname, 'src')}/`,
+      '@podman-desktop/api': resolve(import.meta.dirname, '__mocks__/@podman-desktop/api.ts'),
     },
   },
   test: {
@@ -31,6 +32,12 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'lcov'],
       include: ['src/**/*.ts'],
+      thresholds: {
+        lines: 30,
+        functions: 40,
+        branches: 20,
+        statements: 30,
+      },
     },
   },
 });
