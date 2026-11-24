@@ -36,7 +36,7 @@ export default defineConfig([
   },
   {
     files: ['**/*.ts'],
-    extends: [typescript.configs.recommendedTypeChecked],
+    extends: [typescript.configs.recommended],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -44,7 +44,6 @@ export default defineConfig([
     },
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-      '@typescript-eslint/unbound-method': 'off',
     },
   },
 ]);

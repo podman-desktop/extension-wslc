@@ -29,6 +29,12 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
+    server: {
+      deps: {
+        // The published mock ends with `module.exports` inside a `"type": "module"` package; inlining lets Vitest transform it.
+        inline: ['@podman-desktop/api-mocks-vitest'],
+      },
+    },
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
