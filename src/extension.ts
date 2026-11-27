@@ -17,7 +17,16 @@
  ***********************************************************************/
 
 import type { ExtensionContext } from '@podman-desktop/api';
+import { WslcExtension } from './wslc-extension';
 
-export async function activate(_extensionContext: ExtensionContext): Promise<void> {}
+let wslcExtension: WslcExtension | undefined;
 
-export async function deactivate(): Promise<void> {}
+export async function activate(extensionContext: ExtensionContext): Promise<void> {
+  wslcExtension ??= new WslcExtension(extensionContext);
+  await wslcExtension.activate();
+}
+
+export async function deactivate(): Promise<void> {
+  await wslcExtension?.deactivate();
+  wslcExtension = undefined;
+}
